@@ -26,4 +26,3 @@ class InitDB(Command):
         g.session.commit()
 
         g.session.close()
-        print User.query.all()

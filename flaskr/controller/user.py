@@ -58,9 +58,6 @@ def login():
         #remember = form.remember.data
         remember = 1
         user = User.get_from_username_password(username, password)
-        print "*" * 50
-        print user
-        print "*" * 50
         if user is not None:
             loginuser = LoginUser(user.id, user.name)
             if login_user(loginuser):

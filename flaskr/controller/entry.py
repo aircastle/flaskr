@@ -23,11 +23,6 @@ def show_entries(page):
     form     = AddEntryForm(request.form)
     PER_PAGE = 5
     count    = Entry.count_all()
-
-    print "-" * 50
-    print count
-    print "-" * 50
-
     entries  = Entry.get_for_page(page, PER_PAGE)
 
     if not entries and page != 1: abort(404)
