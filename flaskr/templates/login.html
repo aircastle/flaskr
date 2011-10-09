@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{%- block body -%}
+    <div id="headings">
+      <div class="row">
+        <div class="column grid-16">
+          <h2>Login</h2>
+          {%- if error %}
+          <p class=error><strong>Error:</strong> {{ error }}</p>
+          {%- endif -%}
+          <form action="{{ url_for('login') }}" method="post">
+            <fieldset>
+              <legend>Login Form</legend>
+              <label for="name">{{ form.username.label }}</label>
+              {{ form.username() }}
+              <label for="name">{{ form.password.label }}</label>
+              {{ form.password() }}
+            </fieldset>
+            <div class="submit">
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

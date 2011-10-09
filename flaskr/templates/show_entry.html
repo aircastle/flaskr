@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{%- block body -%}
+<div id="headings">
+  <div class="row">
+    <div class="column grid-16">
+      {%- if entry -%}
+      <article>
+        <h1>{{ entry.title }}</h1>
+        <p>{{ entry.content|safe }}</p>
+        <p>{{ entry.date }}</p>
+      </article>
+      {%- for comment in comments -%}
+      <article>
+        <h1>{{ comment.author }}</h1>
+        <p>{{ comment.comment|safe }}</p>
+        <p>{{ comment.email|safe }}</p>
+        <p>{{ comment.url|safe }}</p>
+        <p>{{ comment.date }}</p>
+      </article>
+      {%- endfor -%}
+      {% from "add_comment_form.html" import add_comment_form %}
+      {{ add_comment_form(form, entry) }}
+      {%- else -%}
+      <article>
+        <h1>Unbelievable.  No entries here so far</h1>
+      </article>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+{%- endblock -%}}

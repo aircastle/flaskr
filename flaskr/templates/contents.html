@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{%- block body -%}
+    <div id="headings">
+      <div class="row">
+        <div class="column grid-16">
+        <!-- <div class="column grid-12"> -->
+          {%- for message in get_flashed_messages() -%}
+          <div class=flash>{{ message }}</div>
+          {%- endfor -%}
+          {%- include "show_entries.html" ignore missing -%}
+        </div> <!-- end of <div class="column grid-12"> -->
+
+        <!-- <div class="column grid-4"> -->
+        <!--   {% if not session.logged_in -%} -->
+        <!--   <a href="{{ url_for('login') }}">log in</a> -->
+        <!--   {%- else -%} -->
+        <!--   <a href="{{ url_for('logout') }}">log out</a> -->
+        <!--   {%- endif -%} -->
+        <!-- </div> <\!-- end of <div class="column grid-4"> -\-> -->
+
+      </div> <!-- end of <div class="row"> -->
+    </div> <!-- end of <div class="headings"> -->
+
+    <div id="typography">
+      <div class="row">
+        <div class="column grid-4">
+          <h4 class="f-h4">Paragraph</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="column grid-4">
+          <h4 class="f-h4">List</h4>
+          <ul>
+            <li>One lorem ipsum element</li>
+            <li>Another dolor sit amet element</li>
+            <li>A longer text to demonstrate how do long text elements look, consectetuer adipiscing elit</li>
+            <li>
+              <ul>
+                <li>One lorem ipsum element</li>
+                <li>Another dolor sit amet element</li>
+                <li>A longer text to demonstrate how do long text elements look, consectetuer adipiscing elit</li>
+                <li>This is the last item</li>
+              </ul>
+            </li>
+            <li>This is the last item</li>
+          </ul>
+        </div>
+        <div class="column grid-4">
+          <h4 class="f-h4">Ordered List</h4>
+          <ol>
+            <li>One lorem ipsum element</li>
+            <li>Another dolor sit amet element</li>
+            <li>A longer text to demonstrate how do long text elements look, consectetuer adipiscing elit</li>
+            <li>
+              <ol>
+                <li>One lorem ipsum element</li>
+                <li>Another dolor sit amet element</li>
+                <li>A longer text to demonstrate how do long text elements look, consectetuer adipiscing elit</li>
+                <li>This is the last item</li>
+              </ol>
+            </li>
+            <li>This is the last item</li>
+          </ol>
+        </div>
+        <div class="column grid-4">
+          <h4 class="f-h4">Definition Lists</h4>
+          <dl>
+            <dt>Element to describe</dt>
+              <dd>A complete description on this element</dd>
+            <dt>Another element to describe</dt>
+              <dd>A complete description for this element, but using a longer text area, to show how it looks</dd>
+            <dt>Element to describe</dt>
+              <dd>Less text</dd>
+            <dt>An element to describe</dt>
+              <dd>There is a lot of text here describing an element inside the Perkins design framework. I must remind you all that the Perkins design framework is an excellent way to design the web faster.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+{%- endblock -%}

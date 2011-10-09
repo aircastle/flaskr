@@ -1,0 +1,15 @@
+{% macro add_entry_form(current_user, form) %}
+{%- if current_user.is_authenticated() -%}
+<h4 class="f-h4">Forms</h4>
+<form action="{{ url_for('add_entry') }}" method="post">
+  <fieldset>
+    <legend>Basic options</legend>
+    <label for="name">{{ form.title.label }}</label>
+    {{ form.title() }}
+    <label for="name">{{ form.content.label }}</label>
+    {{ form.content() }}
+  </fieldset>
+  {{ form.post(class="submit") }}
+</form>
+{%- endif -%}
+{% endmacro %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Flaskr</title>
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:regular,bold" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static', filename='app.less') }}" media="all" rel="stylesheet/less" type="text/css" />
+  <script type="text/javascript" src="{{ url_for('static', filename='jquery-1.6.1.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='less-1.0.41.js') }}"></script>
+  <script type="text/javascript" charset="utf-8">
+    // Under development you should uncomment the following lines,
+    // to make the browser refresh the changes that you are makeing in your app.less file.
+    less.env = "development";
+    less.watch();
+  </script>
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <header>
+    <div class="row">
+      <div class="column grid-16">
+        <hgroup>
+          <h1 class="logo"><a href="{{ url_for('show_entries') }}">Flaskr</a></h1>
+          <p class="slogan">Design <span class="serif">&amp;</span> Develop the Web, Faster.</p>
+        </hgroup>
+      </div> <!-- end of <div class="column grid-16"> -->
+    </div> <!-- end of <div class="row"> -->
+  </header>
+  <div id="content">
+    {% block body %}{% endblock %}
+  </div> <!-- end of <div id="content"> -->
+
+  <footer>
+    <div class="row">
+      <div class="column grid-16">
+        <!-- <p class="tac"><strong>perkins</strong> is under MIT License</p> -->
+        <p class="tac"><small>Copyright &copy; 2011 - <a href="http://carloselias.cl">Carlos El&iacute;as</a> and the <strong>perkins</strong> crew</small></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

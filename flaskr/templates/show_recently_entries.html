@@ -1,0 +1,10 @@
+<h4 class="f-h4">Recent Entries</h4>
+<ol>
+  {%- for item in recententries -%}
+  <li>
+    <a href="{{ url_for('show_entry', entryid=item.id) }}">
+      {{ item.title }}
+    </a>
+  </li>
+  {%- endfor -%}
+</ol>

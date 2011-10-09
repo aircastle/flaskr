@@ -1,0 +1,18 @@
+{% macro add_comment_form(form, entry) %}
+<h4 class="f-h4">Forms</h4>
+<form action="{{ url_for('add_comment', entryid=entryid) }}" method="post">
+  <fieldset>
+    <legend>Basic options</legend>
+    {{ form.entryid(value=entry.id) }}
+    <label for="name">{{ form.author.label }}</label>
+    {{ form.author() }}
+    <label for="name">{{ form.comment.label }}</label>
+    {{ form.comment() }}
+    <label for="name">{{ form.email.label }}</label>
+    {{ form.email() }}
+    <label for="name">{{ form.url.label }}</label>
+    {{ form.url() }}
+  </fieldset>
+  {{ form.post(class="submit") }}
+</form>
+{% endmacro %}
